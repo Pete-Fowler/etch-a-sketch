@@ -7,6 +7,13 @@ make a 16x16 grid of divs using javascript
 
 // Outer container
 const container = document.createElement('div');
+container.className = "container";
 document.body.appendChild(container);
-container.classList = "container";
 
+
+// 16 x 16 grid of divs
+for (let i = 0; i < 15; i++) {
+    const gridDiv = document.createElement('div');
+    gridDiv.className = "grid-div";
+    container.appendChild(gridDiv);
+}

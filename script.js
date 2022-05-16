@@ -5,7 +5,12 @@ make a 16x16 grid of divs using javascript
     CSS to style it into a grid
 */
 
-// Outer container
+// Grid size slider
+    const slider = document.querySelector('.slider');
+    const sliderBox = document.querySelector('.slider-box');
+    sliderBox.appendChild(slider.value);
+
+// Outer grid container
     const container = document.createElement('div');
     container.className = "container";
     document.body.appendChild(container);
@@ -27,7 +32,7 @@ make a 16x16 grid of divs using javascript
     }
 
     function changeColor() {
-        this.setAttribute('style', 'color: blue; background-color: blue;');
+        this.setAttribute('style', 'background-color: blue;');
 
     }
 

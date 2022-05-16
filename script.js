@@ -12,8 +12,10 @@ document.body.appendChild(container);
 
 
 // 16 x 16 grid of divs
-for (let i = 0; i < 15; i++) {
+for (let i = 0; i < 255; i++) {
     const gridDiv = document.createElement('div');
     gridDiv.className = "grid-div";
     container.appendChild(gridDiv);
 }
+
+

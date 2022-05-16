@@ -7,8 +7,10 @@ make a 16x16 grid of divs using javascript
 
 // Grid size slider
     const slider = document.querySelector('.slider');
-    const sliderBox = document.querySelector('.slider-box');
-    sliderBox.appendChild(slider.value);
+    const sliderTextBox = document.querySelector('.slider-text-box');
+    sliderTextBox.textContent = `${slider.value} x ${slider.value}`;
+    slider.oninput = () => sliderTextBox.textContent = `${slider.value} x 
+    ${slider.value}`;
 
 // Outer grid container
     const container = document.createElement('div');

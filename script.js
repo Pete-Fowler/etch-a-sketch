@@ -24,10 +24,11 @@ function makeGrid(length = 16) {
 
     // Outer grid container
     const container = document.createElement('div');
+    const invisBox = document.querySelector('.invis-box');
     container.className = "container";
     container.setAttribute('style', `grid-template-columns: repeat(${length}, 1fr); grid-template-rows: repeat(${length}, 1fr);`);
-    document.body.appendChild(container);
-
+    //document.body.appendChild(container);
+    document.body.insertBefore(container, invisBox) 
     // Create grid of divs    
     for (let i = 0; i < length * length; i++) {
         const gridDiv = document.createElement('div');
@@ -35,7 +36,6 @@ function makeGrid(length = 16) {
         container.appendChild(gridDiv);
         }
     hoverEffect();
-   
 }
 
 // Place the initial grid

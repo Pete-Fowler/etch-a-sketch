@@ -1,16 +1,28 @@
 body {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 90vh;
-    width: 90vw;
+    justify-content: center;
+    font-family: 'roboto', monospace;
+}
+
+.header {
+    margin-bottom: -.7em;
+    
+}
+
+h2 {
+    margin: .3em;
+}
+
+.slider-box, .slider-text-box {
+    display: flex;
+    justify-content: center;
 }
 
 .container {
     border: 1em solid red;
     display: grid; 
-    width: 80vh; 
-    height: 80vh; 
+    width: 90vh; 
+    height: 90vh;
 }
 
 .grid-div {
@@ -18,7 +30,3 @@ body {
     height: 100%;
 }
 
-.slider-box, .slider-text-box {
-    display: flex;
-    justify-content: center;
-}

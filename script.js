@@ -12,14 +12,18 @@ sliderTextBox.textContent = `Grid size: ${slider.value} x ${slider.value}`;
 slider.oninput = () => sliderTextBox.textContent = `Grid size: ${slider.value} x 
 ${slider.value}`;
 
+slider.addEventListener('input', () => makeGrid(slider.value), true);
+
 function makeGrid(length = 16) {
-    if (document.querySelector('.container')) {
-    body.removeChild(container);
+    const test = document.querySelector('.container');
+    if (test) {
+    document.body.removeChild(test);
     }
 
     // Outer grid container
     const container = document.createElement('div');
     container.className = "container";
+    container.setAttribute('style', `display: grid; width: 100%; height: 100%; grid-template-columns: repeat(${length}, 1fr); grid-template-rows: repeat(${length}, 1fr);`);
     document.body.appendChild(container);
 
     // Create grid of divs    
@@ -28,27 +32,24 @@ function makeGrid(length = 16) {
         gridDiv.className = "grid-div";
         container.appendChild(gridDiv);
         }
-    
-    // Event listener for grid size input
-    
+    hoverEffect();
+   
 }
 
 makeGrid(slider.value);
 
+ //Add hover effect to boxes
+ function hoverEffect() {
+ const boxes = document.querySelectorAll('.grid-div');
+ boxes.forEach(hoverEvent);
+}
 
- 
-
-
-// Add hover effect to boxes
-const boxes = document.querySelectorAll('.grid-div');
-boxes.forEach(hoverEffect);
-
-function hoverEffect (box) {
+function hoverEvent (box) {
     box.addEventListener('mouseenter', changeColor);
 }
 
 function changeColor() {
     this.setAttribute('style', 'background-color: blue;');
-
 }
+
 

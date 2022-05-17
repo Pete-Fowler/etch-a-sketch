@@ -15,6 +15,8 @@ ${slider.value}`;
 slider.addEventListener('input', () => makeGrid(slider.value), true);
 
 function makeGrid(length = 16) {
+    
+    // Remove grid if it exists
     const test = document.querySelector('.container');
     if (test) {
     document.body.removeChild(test);
@@ -23,7 +25,7 @@ function makeGrid(length = 16) {
     // Outer grid container
     const container = document.createElement('div');
     container.className = "container";
-    container.setAttribute('style', `display: grid; width: 100%; height: 100%; grid-template-columns: repeat(${length}, 1fr); grid-template-rows: repeat(${length}, 1fr);`);
+    container.setAttribute('style', `grid-template-columns: repeat(${length}, 1fr); grid-template-rows: repeat(${length}, 1fr);`);
     document.body.appendChild(container);
 
     // Create grid of divs    
@@ -36,12 +38,13 @@ function makeGrid(length = 16) {
    
 }
 
+// Place the initial grid
 makeGrid(slider.value);
 
- //Add hover effect to boxes
- function hoverEffect() {
- const boxes = document.querySelectorAll('.grid-div');
- boxes.forEach(hoverEvent);
+//Add hover effect to boxes
+function hoverEffect() {
+    const boxes = document.querySelectorAll('.grid-div');
+    boxes.forEach(hoverEvent);
 }
 
 function hoverEvent (box) {

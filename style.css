@@ -4,12 +4,13 @@ body {
     font-family: 'roboto', monospace;
     color: #E7C07B;
     background-color: #9CB0CE;
+    padding: .5em;
 }
 
 .header {
     margin-bottom: -.7em;
     width: 17%px;
-    height: 600px;
+    height: 95vh;
     border-radius: 1em;
     background-color: #587199;
 }
@@ -30,8 +31,8 @@ h1 {
 .container {
     border: 1.5em solid#2C4770;
     display: grid; 
-    width: 600px; 
-    height: 600px;
+    width: 95vh; 
+    height: 95vh;
     border-radius: 1em;
     box-sizing: border-box;
 }

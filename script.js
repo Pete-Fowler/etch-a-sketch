@@ -52,7 +52,7 @@ function hoverEvent (box) {
 }
 
 function changeColor() {
-    this.setAttribute('style', 'background-color: blue;');
+    this.setAttribute('style', 'background-color: #E7C07B;');
 }
 
 

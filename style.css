@@ -2,11 +2,16 @@ body {
     display: flex;
     justify-content: center;
     font-family: 'roboto', monospace;
+    color: #E7C07B;
+    background-color: #9CB0CE;
 }
 
 .header {
     margin-bottom: -.7em;
     width: 17%;
+    height: 97.5vh;
+    border-radius: 1em;
+    background-color: #587199;
 }
 
 h2 {
@@ -18,11 +23,16 @@ h2 {
     justify-content: center;
 }
 
+.slider {
+    
+}
+
 .container {
-    border: 1em solid red;
+    border: 1.5em solid#2C4770;
     display: grid; 
     width: 90vh; 
     height: 90vh;
+    border-radius: 1em;
 }
 .grid-div {
     width: 100%;

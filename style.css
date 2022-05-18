@@ -8,13 +8,13 @@ body {
 
 .header {
     margin-bottom: -.7em;
-    width: 17%;
-    height: 97.5vh;
+    width: 17%px;
+    height: 600px;
     border-radius: 1em;
     background-color: #587199;
 }
 
-h2 {
+h1 {
     margin: .3em;
 }
 
@@ -30,9 +30,10 @@ h2 {
 .container {
     border: 1.5em solid#2C4770;
     display: grid; 
-    width: 90vh; 
-    height: 90vh;
+    width: 600px; 
+    height: 600px;
     border-radius: 1em;
+    box-sizing: border-box;
 }
 .grid-div {
     width: 100%;

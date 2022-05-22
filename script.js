@@ -1,7 +1,6 @@
-let colorValue = 'E7C07B';
+let colorValue = '#E7C07B';
 let randomColorOn = false;
 
-// Grid size slider
 const slider = document.querySelector('.slider');
 const sliderTextBox = document.querySelector('.slider-text-box');
 sliderTextBox.textContent = `Grid size: ${slider.value} x ${slider.value}`;
@@ -9,13 +8,14 @@ slider.oninput = () => sliderTextBox.textContent = `Grid size: ${slider.value} x
 ${slider.value}`;
 slider.addEventListener('input', () => makeGrid(slider.value), true);
 
-// Random color button
 const randomColorBtn = document.getElementById('random');
 randomColorBtn.addEventListener('click', randomColor);
 
-// Clear button
 const clearBtn = document.getElementById('clear');
 clearBtn.addEventListener('click', clear);
+
+const colorPicker = document.getElementById('color-picker');
+colorPicker.addEventListener('input', pickColor);
 
 function makeGrid(length = 16) {
     
@@ -56,10 +56,16 @@ function hoverEvent (box) {
 
 function changeColor() {
     if(randomColorOn) {
-        colorValue = Math.floor(Math.random()*16777215).toString(16);
+        colorValue = '#' + Math.floor(Math.random()*16777215).toString(16);
     }
-    this.setAttribute('style', `background-color: #${colorValue};`);
-   
+
+    this.setAttribute('style', `background-color: ${colorValue};`);
+}
+
+function pickColor() {
+    randomColorOn = false;
+    colorValue = colorPicker.value;
+    makeGrid(slider.value);
 }
 
 function randomColor() {
@@ -69,7 +75,8 @@ function randomColor() {
 
 function clear() {
     randomColorOn = false;
-    colorValue = 'E7C07B';
+    colorValue = '#E7C07B';
+    colorPicker.value = '#E7C07B';
     makeGrid(slider.value);
 }
 

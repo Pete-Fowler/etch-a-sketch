@@ -13,6 +13,10 @@ slider.addEventListener('input', () => makeGrid(slider.value), true);
 const randomColorBtn = document.getElementById('random');
 randomColorBtn.addEventListener('click', randomColor);
 
+// Clear button
+const clearBtn = document.getElementById('clear');
+clearBtn.addEventListener('click', clear);
+
 function makeGrid(length = 16) {
     
     // Remove grid if it exists
@@ -60,7 +64,12 @@ function changeColor() {
 
 function randomColor() {
     randomColorOn = true;
-    makeGrid(slider.Value);
+    makeGrid(slider.value);
 }
 
+function clear() {
+    randomColorOn = false;
+    colorValue = 'E7C07B';
+    makeGrid(slider.value);
+}
 

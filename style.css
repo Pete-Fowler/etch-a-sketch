@@ -35,8 +35,7 @@ button {
     font-weight: 700;
     width: 80%;
     padding: .5rem;
-    margin: .2rem;
-    margin-top: 2.5rem;
+    margin: 1rem;
     border-radius: .8rem;
     box-shadow: .1rem .1rem .2rem .2rem grey;
     transition: .4s;
@@ -51,6 +50,25 @@ button:active {
     box-shadow: 0rem 0rem 0rem 0rem;
 }
 
+.color-picker {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3rem;
+    font-weight: 700;
+    border-radius: .3rem;
+    margin: 1.5rem;
+}
+
+#color-picker {
+    width: 5rem;
+    height: 5rem;
+    padding: .3rem;
+    background-color: #2C4770;
+    border-radius: .7rem;
+}
+
 .container {
     border: 1.5rem solid#2C4770;
     display: grid; 
@@ -60,6 +78,7 @@ button:active {
     box-sizing: border-box;
     box-shadow: .3rem .3rem .4rem .2rem grey;
 }
+
 .grid-div {
     width: 100%;
     height: 100%;

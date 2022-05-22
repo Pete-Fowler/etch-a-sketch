@@ -18,12 +18,7 @@ const colorPicker = document.getElementById('color-picker');
 colorPicker.addEventListener('input', pickColor);
 
 let mouseDown = 0;
-document.body.onmousedown = function() { 
-  ++mouseDown;
-}
-document.body.onmouseup = function() {
-  --mouseDown;
-}
+
 
 function makeGrid(length = 16) {
     
@@ -38,7 +33,13 @@ function makeGrid(length = 16) {
     const invisBox = document.querySelector('.invis-box');
     container.className = "container";
     container.setAttribute('style', `grid-template-columns: repeat(${length}, 1fr); grid-template-rows: repeat(${length}, 1fr);`);
-    //document.body.appendChild(container);
+    container.onmousedown = function() { 
+        ++mouseDown;
+      }
+    container.onmouseup = function() {
+        --mouseDown;
+      }
+
     document.body.insertBefore(container, invisBox) 
     // Create grid of divs    
     for (let i = 0; i < length * length; i++) {

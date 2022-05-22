@@ -17,6 +17,14 @@ clearBtn.addEventListener('click', clear);
 const colorPicker = document.getElementById('color-picker');
 colorPicker.addEventListener('input', pickColor);
 
+let mouseDown = 0;
+document.body.onmousedown = function() { 
+  ++mouseDown;
+}
+document.body.onmouseup = function() {
+  --mouseDown;
+}
+
 function makeGrid(length = 16) {
     
     // Remove grid if it exists
@@ -58,8 +66,9 @@ function changeColor() {
     if(randomColorOn) {
         colorValue = '#' + Math.floor(Math.random()*16777215).toString(16);
     }
-
+    if(mouseDown) {
     this.setAttribute('style', `background-color: ${colorValue};`);
+    }
 }
 
 function pickColor() {

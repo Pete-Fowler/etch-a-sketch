@@ -8,20 +8,21 @@ body {
 }
 
 .header {
-    margin-bottom: -.7em;
-    width: 17%px;
+    box-sizing: border-box;
+    width: 22vw;
     height: 95vh;
-    border-radius: 1em;
+    padding: .5rem;
+    margin-right: 1rem;
+    border-radius: 1rem;
     background-color: #587199;
-}
-
-h1 {
-    margin: .3em;
+    box-shadow: .3rem .3rem .4rem .2rem grey;
 }
 
 .slider-box, .slider-text-box {
     display: flex;
     justify-content: center;
+    font-size: 1.2rem;
+    font-weight: 700;
 }
 
 .slider {
@@ -29,12 +30,13 @@ h1 {
 }
 
 .container {
-    border: 1.5em solid#2C4770;
+    border: 1.5rem solid#2C4770;
     display: grid; 
     width: 95vh; 
     height: 95vh;
     border-radius: 1em;
     box-sizing: border-box;
+    box-shadow: .3rem .3rem .4rem .2rem grey;
 }
 .grid-div {
     width: 100%;

@@ -1,9 +1,5 @@
-/*
-make a 16x16 grid of divs using javascript
-    document.addElement to create 16 divs within an outer container div
-
-    CSS to style it into a grid
-*/
+let colorValue = 'E7C07B';
+let randomColorOn = false;
 
 // Grid size slider
 const slider = document.querySelector('.slider');
@@ -11,8 +7,11 @@ const sliderTextBox = document.querySelector('.slider-text-box');
 sliderTextBox.textContent = `Grid size: ${slider.value} x ${slider.value}`;
 slider.oninput = () => sliderTextBox.textContent = `Grid size: ${slider.value} x 
 ${slider.value}`;
-
 slider.addEventListener('input', () => makeGrid(slider.value), true);
+
+// Random color button
+const randomColorBtn = document.getElementById('random');
+randomColorBtn.addEventListener('click', randomColor);
 
 function makeGrid(length = 16) {
     
@@ -52,7 +51,16 @@ function hoverEvent (box) {
 }
 
 function changeColor() {
-    this.setAttribute('style', `background-color: #E7C07B;`);
+    if(randomColorOn) {
+        colorValue = Math.floor(Math.random()*16777215).toString(16);
+    }
+    this.setAttribute('style', `background-color: #${colorValue};`);
+   
+}
+
+function randomColor() {
+    randomColorOn = true;
+    makeGrid(slider.Value);
 }
 
 

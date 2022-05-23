@@ -75,12 +75,10 @@ function changeColor() {
 function pickColor() {
     randomColorOn = false;
     colorValue = colorPicker.value;
-    makeGrid(slider.value);
 }
 
 function randomColor() {
     randomColorOn = true;
-    makeGrid(slider.value);
 }
 
 function clear() {
